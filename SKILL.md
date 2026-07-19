@@ -8,6 +8,7 @@ description: >
   一个颠覆性的规划", "break the assumptions behind X", "design a 10x path for Y",
   or any ambitious long-horizon planning task where conventional plans fall flat.
 color: purple
+author: CeaserZhao (github: zbbsdsb)
 ---
 
 # Great Expectations (远大前程) — Disruptive & Complete Planning Engine
