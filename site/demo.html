@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="positive">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo — Great Expectations</title>
+  <meta name="description" content="Real Great Expectations output, including a Google Glass back-test, plus a prompt assembler you can copy into any LLM." />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta property="og:image" content="assets/og.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dot"></span>GREAT EXPECTATIONS</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Index</a>
+        <a href="skill.html">Skill</a>
+        <a href="demo.html" aria-current="page">Demo</a>
+        <a href="contributing.html">Contributing</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle positive / negative theme">NEGATIVE</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <p class="meta reveal">Demo</p>
+        <h1 class="display reveal">See it think.</h1>
+        <p class="lead reveal" style="margin-top:var(--s4)">
+          Three real runs of the skill. Then assemble your own prompt and drop it
+          into any LLM.
+        </p>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <hr class="rule" />
+      <div class="reveal">
+        <p class="meta">Sample runs</p>
+        <h2>Output, not promises.</h2>
+        <p>Each run follows the eight-section format. The first is a back-test that pinpoints exactly which completeness check Google Glass missed.</p>
+      </div>
+
+      <!-- Example 1 -->
+      <section class="example reveal">
+        <div class="in">
+          <p class="meta">Input</p>
+          <p><strong>Goal:</strong> Why did Google Glass fail, and what would GE have flagged pre-launch?</p>
+          <p><strong>Consensus:</strong> Wearable AR diffuses like smartphones; enthusiasts preview the mass market.</p>
+          <p><strong>Scarce:</strong> Social license — public trust about being recorded.</p>
+        </div>
+        <div class="out">
+          <span class="section-label">Output · 8 sections</span>
+          <h3>1 — Assumption Inventory</h3>
+          <p><code>CONSENSUS</code> "breakthrough device sells on specs then crosses to mainstream" — false for socially-mediated wearables. <code>SYSTEM-1</code> "camera-on-face is just a better phone" — ignored the other-person threat.</p>
+          <h3>2 — First-Principles</h3>
+          <p>Glasses = (FOV display) + (forward camera) + (social acceptability) + (power). Binding constraint is bystander consent, a non-engineering variable.</p>
+          <h3>3 — Disruptive Pathways</h3>
+          <p><strong>A</strong> Consent-by-default: unmistakable recording indicator. <strong>B</strong> Enterprise-only beachhead (surgeons, warehouses) where being recorded is contractual.</p>
+          <h3>4 — Completeness Mapping</h3>
+          <p>① Bystander role never named → FAIL. ② Social license had no substitute → FAIL. ③ Stopped at 1st order → FAIL. ④ No Plan B at the irreversible first-impression node → FAIL.</p>
+          <h3>5 — Stress-Test Report</h3>
+          <p>All four tests FAIL on the original launch; Paths A/B pass. <strong>Original voided.</strong></p>
+          <h3>6 — Vulnerability</h3>
+          <p>One viral "creepshot" (Non-linear shock) collapses the consumer thesis in 72h. Kill-switch: hard consent UI + enterprise pivot.</p>
+          <h3>7 — Bias Audit</h3>
+          <p>Overconfidence (engineering ≠ adoption); tech-centric bias (ignored the witnessed).</p>
+          <h3>8 — Falsifiable</h3>
+          <p>A visible indicator would cut ban incidents >50% in 6mo; enterprise-first hits $100M before any consumer try; no consent UI fixes the curve.</p>
+        </div>
+      </section>
+
+      <!-- Example 2 -->
+      <section class="example reveal">
+        <div class="in">
+          <p class="meta">Input</p>
+          <p><strong>Goal:</strong> Turn a SW-China agricultural county into a global Web3 content hub in 10 years.</p>
+          <p><strong>Consensus:</strong> You need a tech metropolis + VC density + talent density first.</p>
+          <p><strong>Scarce:</strong> Top Web3 talent willing to relocate to a farm county.</p>
+        </div>
+        <div class="out">
+          <span class="section-label">Output · 8 sections</span>
+          <h3>1 — Assumption Inventory</h3>
+          <p><code>CONSENSUS</code> clusters require physical proximity to capital/talent; county competes on the same axes as Shenzhen → loses by definition.</p>
+          <h3>2 — First-Principles</h3>
+          <p>Hub = (attention) + (tooling) + (distribution) + (rails). None require a metropolis in a remote-first world.</p>
+          <h3>3 — Disruptive Pathways</h3>
+          <p><strong>A</strong> Regulatory free port for creators (jurisdiction, not real estate). <strong>B</strong> Remote-first creator DAO — county as legal domicile, not office.</p>
+          <h3>4 — Completeness Mapping</h3>
+          <p>① Central gov gains monitoring KPI; farmers get rent expectations — named. ② Policy permission is binding; hedged. ③ Regulator ban modeled as 3rd-order shock. ④ Three options pre-bought at the notice node.</p>
+          <h3>5 — Stress-Test Report</h3>
+          <p>All four PASS. Paths survive the resource/policy/regulator stresses.</p>
+          <h3>6 — Vulnerability</h3>
+          <p>National blanket ban (Incomprehensible timing) freezes settlement. Kill-switch: pre-domiciled entity + fiat fallback.</p>
+          <h3>7 — Bias Audit</h3>
+          <p>Anchoring on "metropolis = innovation"; confirmation (crypto-bullish sources only).</p>
+          <h3>8 — Falsifiable</h3>
+          <p>>500 creators register yr1 without relocating; fiat fallback caps ban damage <30%; top-10 hub rank by yr5.</p>
+        </div>
+      </section>
+
+      <!-- Example 3 -->
+      <section class="example reveal">
+        <div class="in">
+          <p class="meta">Input</p>
+          <p><strong>Goal:</strong> Make a 2M-person city carbon-neutral by 2035.</p>
+          <p><strong>Consensus:</strong> Electrify everything, build renewables, buy offsets for the rest.</p>
+          <p><strong>Scarce:</strong> Grid stability during transition (intermittency + demand spikes).</p>
+        </div>
+        <div class="out">
+          <span class="section-label">Output · 8 sections</span>
+          <h3>1 — Assumption Inventory</h3>
+          <p><code>CONSENSUS</code> more solar+wind+batteries solves it (ignores cement/steel/land); offsets are infinite/cheap/permanent.</p>
+          <h3>2 — First-Principles</h3>
+          <p>Emissions = (energy) + (materials) + (biosphere) + (waste). Only energy is electric. Binding constraint is materials + biosphere.</p>
+          <h3>3 — Disruptive Pathways</h3>
+          <p><strong>A</strong> Circular by ordinance (low-carbon concrete, material passports). <strong>B</strong> Demand-flat city (cap floor-area, efficiency pricing).</p>
+          <h3>4 — Completeness Mapping</h3>
+          <p>① Construction margin sacrificed, named. ② Offsets not load-bearing → PASS. ③ Price-rise backlash + supply reshuffle modeled. ④ Three political-cover options pre-bought.</p>
+          <h3>5 — Stress-Test Report</h3>
+          <p>All four PASS.</p>
+          <h3>6 — Vulnerability</h3>
+          <p>Cold-snap + wind-lull blackout (Brittle). Kill-switch: dispatchable geothermal + demand response before any gas ban.</p>
+          <h3>7 — Bias Audit</h3>
+          <p>Optimism bias (offsets); single-axis (energy only).</p>
+          <h3>8 — Falsifiable</h3>
+          <p>Ordinance alone cuts built-environment emissions >40% by 2030; blackout risk <2% if geothermal ≥15% peak; floor-area cap holds demand <1%/yr.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="wrap">
+      <hr class="rule" />
+      <div class="reveal">
+        <p class="meta">Assemble your own</p>
+        <h2>Build a prompt, copy it, run it anywhere.</h2>
+        <p>This static site has no LLM key, so it does not generate live output. It composes the full system prompt + your inputs into a block you can paste into ChatGPT, Claude, or any custom GPT / Claude Project.</p>
+      </div>
+
+      <form id="assembler" class="reveal" style="margin-top:var(--s5)">
+        <div class="grid-12">
+          <div class="span-4">
+            <label class="meta" for="f-goal">Goal</label>
+            <textarea id="f-goal" rows="3" style="width:100%;margin-top:var(--s2);font:inherit;padding:var(--s2);border:1px solid var(--line-strong);background:var(--paper);color:var(--ink)"></textarea>
+          </div>
+          <div class="span-4">
+            <label class="meta" for="f-consensus">Biggest consensus</label>
+            <textarea id="f-consensus" rows="3" style="width:100%;margin-top:var(--s2);font:inherit;padding:var(--s2);border:1px solid var(--line-strong);background:var(--paper);color:var(--ink)"></textarea>
+          </div>
+          <div class="span-4">
+            <label class="meta" for="f-resource">Scarce resource</label>
+            <textarea id="f-resource" rows="3" style="width:100%;margin-top:var(--s2);font:inherit;padding:var(--s2);border:1px solid var(--line-strong);background:var(--paper);color:var(--ink)"></textarea>
+          </div>
+        </div>
+        <p style="margin-top:var(--s3)">
+          <button class="btn accent" type="submit">Compose prompt</button>
+          <button class="btn" type="button" id="copy-btn" style="margin-left:var(--s2)">Copy</button>
+        </p>
+        <textarea id="out-prompt" rows="14" readonly style="width:100%;margin-top:var(--s3);font-family:var(--mono);font-size:13px;padding:var(--s3);border:1px solid var(--line-strong);background:var(--paper);color:var(--ink)"></textarea>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Great Expectations — a disruptive &amp; complete planning engine.</span>
+      <span>Author: CeaserZhao · MIT License</span>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+  <script src="assets/demo.js"></script>
+</body>
+</html>

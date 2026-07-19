@@ -1,0 +1,26 @@
+name: Docs gate (links + HTML)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/scripts/check_docs.py'
+  pull_request:
+    paths:
+      - 'site/**'
+      - '.github/scripts/check_docs.py'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run docs gate
+        run: python .github/scripts/check_docs.py

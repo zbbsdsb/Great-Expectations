@@ -1,0 +1,237 @@
+/* ============================================================
+   Great Expectations — Swiss / International Typographic System
+   Zero external requests. Positive (black-on-paper) / Negative
+   (white-on-ink) inversion via [data-theme] on <html>.
+   ============================================================ */
+
+:root {
+  /* Palette — absolute monochrome + single Swiss accent (<5%) */
+  --ink: #0A0A0A;
+  --paper: #FAFAFA;
+  --line: #E2E2E2;
+  --line-strong: #C9C9C9;
+  --muted: #5F5E5A;
+  --accent: #E30613;
+
+  /* Type */
+  --sans: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Spacing scale (4 / 8 base) */
+  --s1: 4px;  --s2: 8px;  --s3: 16px; --s4: 24px;
+  --s5: 32px; --s6: 48px; --s7: 64px; --s8: 96px; --s9: 128px;
+
+  /* Layout */
+  --maxw: 1200px;
+  --gutter: 24px;
+  --baseline: 8px;
+}
+
+html[data-theme="negative"] {
+  --ink: #FAFAFA;
+  --paper: #0A0A0A;
+  --line: #2A2A2A;
+  --line-strong: #444444;
+  --muted: #A8A7A2;
+  --accent: #FF3B30;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+/* ---------- A11y ---------- */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ink); color: var(--paper);
+  padding: var(--s2) var(--s3); z-index: 100;
+}
+.skip-link:focus { left: var(--s3); top: var(--s3); }
+::selection { background: var(--accent); color: #fff; }
+
+/* ---------- Layout ---------- */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gutter);
+}
+.span-12 { grid-column: span 12; }
+.span-8  { grid-column: span 8; }
+.span-6  { grid-column: span 6; }
+.span-4  { grid-column: span 4; }
+.span-3  { grid-column: span 3; }
+
+/* ---------- Masthead ---------- */
+.masthead {
+  border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 50;
+  background: var(--paper);
+}
+.masthead .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.brand {
+  display: flex; align-items: center; gap: var(--s2);
+  font-weight: 700; letter-spacing: .02em; font-size: 15px;
+  color: var(--ink); text-decoration: none;
+}
+.brand .dot {
+  width: 10px; height: 10px; background: var(--accent);
+  display: inline-block;
+}
+.nav { display: flex; align-items: center; gap: var(--s4); }
+.nav a {
+  color: var(--ink); text-decoration: none; font-size: 13px;
+  letter-spacing: .04em; padding: var(--s1) 0;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover { border-bottom-color: var(--line-strong); }
+.nav a[aria-current="page"] { border-bottom-color: var(--accent); }
+.theme-toggle {
+  font: inherit; font-size: 12px; letter-spacing: .04em;
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--line-strong); cursor: pointer;
+  padding: var(--s1) var(--s2);
+}
+.theme-toggle:hover { border-color: var(--ink); }
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
+.display {
+  font-size: clamp(40px, 8vw, 89px);
+  line-height: 0.98; letter-spacing: -0.03em; font-weight: 700;
+}
+h2 { font-size: clamp(24px, 4vw, 37px); margin-top: var(--s7); }
+h3 { font-size: clamp(18px, 2.4vw, 21px); margin-top: var(--s5); }
+p { margin-top: var(--s3); max-width: 68ch; }
+.lead { font-size: clamp(18px, 2.6vw, 24px); line-height: 1.4; max-width: 32ch; }
+.meta {
+  font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+}
+.rule { border: 0; border-top: 1px solid var(--line); margin: var(--s6) 0; }
+.rule-accent { border-top: 2px solid var(--accent); }
+
+/* Numbered Swiss lists */
+ol.steps { list-style: none; counter-reset: step; padding: 0; }
+ol.steps > li {
+  counter-increment: step; position: relative;
+  padding-left: 56px; margin-top: var(--s5); max-width: 68ch;
+}
+ol.steps > li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute; left: 0; top: 0;
+  font-family: var(--mono); font-size: 13px; color: var(--accent);
+  font-weight: 700;
+}
+ul.plain { list-style: none; padding: 0; }
+ul.plain li { padding-left: 20px; position: relative; margin-top: var(--s2); }
+ul.plain li::before {
+  content: ""; position: absolute; left: 0; top: 11px;
+  width: 8px; height: 1px; background: var(--ink);
+}
+
+/* ---------- Code ---------- */
+code {
+  font-family: var(--mono); font-size: .9em;
+  background: var(--line); padding: 1px 5px;
+}
+pre {
+  font-family: var(--mono); font-size: 13px; line-height: 1.6;
+  background: var(--ink); color: var(--paper);
+  padding: var(--s4); overflow-x: auto; margin-top: var(--s3);
+}
+pre code { background: none; padding: 0; color: inherit; }
+
+/* ---------- Tables ---------- */
+table { width: 100%; border-collapse: collapse; margin-top: var(--s4); font-size: 14px; }
+th, td { text-align: left; padding: var(--s3) var(--s3); border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- Links / buttons ---------- */
+a.link { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+a.link:hover { color: var(--accent); }
+.btn {
+  display: inline-block; font: inherit; font-size: 13px; letter-spacing: .04em;
+  background: var(--ink); color: var(--paper); text-decoration: none;
+  padding: var(--s2) var(--s4); border: 1px solid var(--ink); cursor: pointer;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.accent { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.accent:hover { background: transparent; color: var(--accent); }
+
+/* ---------- Hero ---------- */
+.hero { padding: var(--s9) 0 var(--s7); }
+.hero .display { max-width: 14ch; }
+
+/* ---------- Cards (minimal, hairline) ---------- */
+.card {
+  border: 1px solid var(--line); padding: var(--s4);
+}
+.card .num {
+  font-family: var(--mono); font-size: 13px; color: var(--accent); font-weight: 700;
+}
+
+/* ---------- Example layout (demo) ---------- */
+.example {
+  display: grid; grid-template-columns: 1fr 2fr; gap: var(--gutter);
+  border-top: 1px solid var(--line); padding: var(--s5) 0;
+}
+.example .in { border-right: 1px solid var(--line); padding-right: var(--gutter); }
+.example .out { }
+.section-label {
+  font-family: var(--mono); font-size: 12px; color: var(--accent);
+  letter-spacing: .05em; display: block; margin-bottom: var(--s2);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 1px solid var(--line); margin-top: var(--s9);
+  padding: var(--s6) 0; font-size: 13px; color: var(--muted);
+}
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--s3); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .span-8, .span-6, .span-4, .span-3 { grid-column: span 12; }
+  .example { grid-template-columns: 1fr; }
+  .example .in { border-right: 0; border-bottom: 1px solid var(--line); padding-right: 0; padding-bottom: var(--s3); }
+  .nav { gap: var(--s3); }
+}
+@media (max-width: 560px) {
+  .masthead .wrap { height: auto; flex-direction: column; align-items: flex-start; gap: var(--s2); padding-top: var(--s3); padding-bottom: var(--s3); }
+  .nav { flex-wrap: wrap; }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  .masthead, .theme-toggle, footer { display: none; }
+  body { background: #fff; color: #000; }
+  a { color: #000; text-decoration: underline; }
+  .example { grid-template-columns: 1fr; }
+}
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+html { scroll-behavior: smooth; }
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }

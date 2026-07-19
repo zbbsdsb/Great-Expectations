@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#FAFAFA"/>
+  <rect x="80" y="80" width="40" height="40" fill="#0A0A0A"/>
+  <rect x="96" y="96" width="8" height="8" fill="#E30613"/>
+  <text x="80" y="300" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="92" font-weight="700" letter-spacing="-2" fill="#0A0A0A">GREAT EXPECTATIONS</text>
+  <text x="82" y="360" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="34" font-weight="400" fill="#5F5E5A">A disruptive &amp; complete planning engine.</text>
+  <line x1="80" y1="430" x2="1120" y2="430" stroke="#E2E2E2" stroke-width="1"/>
+  <text x="80" y="500" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="22" letter-spacing="3" fill="#0A0A0A">BREAK THE AVERAGE</text>
+  <text x="80" y="560" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="18" fill="#5F5E5A">凡是被多数人认可的路径，已经失去了超额价值。</text>
+</svg>
