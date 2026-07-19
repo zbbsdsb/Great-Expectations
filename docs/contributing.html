@@ -54,12 +54,12 @@
         <div class="span-4 reveal">
           <p class="meta">02 — Prove</p>
           <h3>Evidence over assertion.</h3>
-          <p>Any change to the prompt must be backed by a real run — an example in <code>site/examples/</code> or your own. No theoretical edits.</p>
+          <p>Any change to the prompt must be backed by a real run — an example in <code>docs/examples/</code> or your own. No theoretical edits.</p>
         </div>
         <div class="span-4 reveal">
           <p class="meta">03 — Gate</p>
           <h3>CI must stay green.</h3>
-          <p>Link check + HTML validation run on every PR. A red run blocks the merge. That is the floor, not the ceiling.</p>
+          <p>Keep changes honest and aligned with the philosophy above. That is the floor, not the ceiling.</p>
         </div>
       </div>
     </section>
@@ -72,9 +72,9 @@
         <ol class="steps">
           <li>Fork and branch (<code>feat/...</code> or <code>fix/...</code>).</li>
           <li>Edit <code>SKILL.md</code>.</li>
-          <li>Run at least one back-test with your changed prompt against an existing <code>site/examples/*.md</code> case (or a new one). Capture before/after.</li>
+          <li>Run at least one back-test with your changed prompt against an existing <code>docs/examples/*.md</code> case (or a new one). Capture before/after.</li>
           <li>In your PR, paste the before/after output and the delta in the acceptance metrics — disruption rate, completeness pass rate, falsifiable count.</li>
-          <li>Open a PR against <code>main</code> using the template. CI must pass.</li>
+          <li>Open a PR against <code>main</code> using the template.</li>
         </ol>
       </div>
     </section>
@@ -85,10 +85,10 @@
         <p class="meta">Examples</p>
         <h2>Adding or updating demonstration runs.</h2>
         <ul class="plain">
-          <li>Place under <code>site/examples/</code>, named <code>topic.md</code> (kebab-case).</li>
+          <li>Place under <code>docs/examples/</code>, named <code>topic.md</code> (kebab-case).</li>
           <li>Include the standard three-field input (Goal / Biggest consensus / Scarcest resource) and the eight output sections from <code>SKILL.md</code>.</li>
           <li>Keep it honest — these are demonstration runs, not fictional marketing.</li>
-          <li>Update <code>site/demo.html</code>'s sample-run section if you want it featured.</li>
+          <li>Update <code>docs/demo.html</code>'s sample-run section if you want it featured.</li>
         </ul>
       </div>
     </section>
@@ -112,7 +112,7 @@
       <hr class="rule" />
       <div class="reveal">
         <p class="meta">The site</p>
-        <h2>Swiss discipline for <code>site/</code>.</h2>
+        <h2>Swiss discipline for <code>docs/</code>.</h2>
         <ul class="plain">
           <li>Black/white, single accent (<code>#E30613</code> &lt;5%), 12-column grid, 8px baseline. No gradients, glass, or large radii.</li>
           <li>Positive/Negative theme must both remain WCAG AA (contrast ≥ 4.5:1).</li>
@@ -129,7 +129,7 @@
         <ul class="plain">
           <li><code>SKILL.md</code> still passes every style red line above.</li>
           <li>At least one example run shows no regression in the metrics.</li>
-          <li>Site (if touched) builds and CI is green.</li>
+          <li>Site (if touched) keeps the Swiss red lines below.</li>
           <li>PR description includes the metric delta.</li>
         </ul>
         <p style="margin-top:var(--s5)">

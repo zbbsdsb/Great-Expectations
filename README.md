@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="site/assets/favicon.svg" width="40" height="40" alt="Great Expectations mark" />
+  <img src="docs/assets/favicon.svg" width="40" height="40" alt="Great Expectations mark" />
 </p>
 
 <h1 align="center">GREAT EXPECTATIONS</h1>
@@ -13,7 +13,6 @@
   <a href="https://img.shields.io/badge/license-MIT-green"><img src="https://img.shields.io/badge/license-MIT-green" alt="License: MIT" /></a>
   <a href="https://img.shields.io/badge/style-Swiss%20%B&W-black"><img src="https://img.shields.io/badge/style-Swiss%20B%26W-black" alt="Style: Swiss B&W" /></a>
   <a href="https://img.shields.io/badge/a11y-WCAG%20AA-blue"><img src="https://img.shields.io/badge/a11y-WCAG%20AA-blue" alt="Accessibility: WCAG AA" /></a>
-  <a href="https://github.com/zbbsdsb/great-expectations/actions"><img src="https://img.shields.io/badge/CI-link%20%2B%20html--check-red" alt="CI status" /></a>
 </p>
 
 ---
@@ -44,7 +43,7 @@ constraints, not a chatbot that plans nicely.
   resource-antifragility, second/third-order, or spatiotemporal-redundancy test.
 - **Eight-section output** you can audit, not vagueness you have to trust.
 
-See the [full protocol →](site/skill.html).
+See the [full protocol →](docs/skill.html).
 
 ## Quick start
 
@@ -52,7 +51,7 @@ See the [full protocol →](site/skill.html).
    it as a system prompt.
 2. Give it a grand goal, the industry's biggest "political correct" consensus,
    and your scarcest resource.
-3. Or skip the copy-paste: open the **[Demo](site/demo.html)**, fill three
+3. Or skip the copy-paste: open the **[Demo](docs/demo.html)**, fill three
    fields, and copy the composed prompt straight into your LLM.
 
 ## See it work
@@ -64,11 +63,11 @@ pinpoints exactly which completeness check was missing when it failed.
 
 ```
 SKILL.md                 # the skill (system prompt)
-site/                    # Swiss-style GitHub Pages site
+docs/                    # Swiss-style GitHub Pages site (served via "Deploy from a branch")
   index.html  skill.html  demo.html  contributing.html
   assets/  examples/
 CONTRIBUTING.md  CODE_OF_CONDUCT.md  LICENSE
-.github/                 # CI (deploy + link/HTML checks)
+.github/                 # issue & PR templates
 ```
 
 ## Standards

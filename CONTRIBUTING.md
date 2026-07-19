@@ -11,26 +11,25 @@ turn it back into a polite, average planner will be rejected. Read this first.
 - **Completeness serves disruption**, not the other way around. Never water a
   disruptive path back into a safe path to satisfy a completeness check.
 - **Evidence over assertion.** Changes to the prompt should be backed by a
-  real run (an example in `site/examples/` or your own).
+  real run (an example in `docs/examples/` or your own).
 
 ## 2. How to change the skill prompt
 
 1. Fork and branch (`feat/...` or `fix/...`).
 2. Edit `SKILL.md`.
 3. **Run at least one back-test** with your changed prompt against an existing
-   `site/examples/*.md` case (or a new one). Capture before/after.
+   `docs/examples/*.md` case (or a new one). Capture before/after.
 4. In your PR, paste the before/after output and the delta in the acceptance
    metrics (disruption rate, completeness pass rate, falsifiable count).
-5. Open a PR against `main` using the template. CI must pass (link check + HTML
-   validation).
+5. Open a PR against `main` using the template.
 
 ## 3. Adding / updating examples
 
-- Place under `site/examples/`, named `topic.md` (kebab-case).
+- Place under `docs/examples/`, named `topic.md` (kebab-case).
 - Must include the **standard three-field input** (Goal / Biggest consensus /
   Scarcest resource) and the **eight output sections** from `SKILL.md`.
 - Keep it honest — these are demonstration runs, not fictional marketing.
-- Update `site/demo.html`'s sample-run section if you want it featured.
+- Update `docs/demo.html`'s sample-run section if you want it featured.
 
 ## 4. Style red lines for `SKILL.md` (do not relax)
 
@@ -42,7 +41,7 @@ turn it back into a polite, average planner will be rejected. Read this first.
 - Step **3.5 Completeness Mapping** with its four penetration tests is the core
   gate — never removable.
 
-## 5. Site (`site/`)
+## 5. Site (`docs/`)
 
 - Swiss / International Typographic style: black/white, single accent
   (`#E30613` <5%), 12-column grid, 8px baseline. No gradients, glass, or large

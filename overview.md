@@ -7,7 +7,7 @@ accepts tomorrow.
 
 ## What shipped
 
-### Site (`site/`, zero-dependency static — no build step)
+### Site (`docs/`, zero-dependency static — no build step)
 | File | Role |
 |------|------|
 | `assets/style.css` | Swiss design system: ink `#0A0A0A` / paper `#FAFAFA`, accent `#E30613` (<5%), 12-col grid, 8px baseline, Positive/Negative inversion, responsive (860/560), print, `prefers-reduced-motion`. **Zero external requests.** |
@@ -26,10 +26,9 @@ accepts tomorrow.
 `.github/ISSUE_TEMPLATE/*` · `.github/PULL_REQUEST_TEMPLATE.md` ·
 rewritten `README.md` (Swiss header, features, quick-start, site link, badges).
 
-### CI/CD (`.github/`)
-- `workflows/deploy.yml` — builds & deploys `site/` to GitHub Pages (main only), runs docs gate first.
-- `workflows/docs.yml` — link + HTML-structure gate, blocks merge on failure.
-- `scripts/check_docs.py` — offline gate: balanced tags, exactly 1 `<h1>`, `lang`, `<title>`, internal-link integrity, **zero external resource loads**.
+### Deployment (no CI — by design)
+Served directly by GitHub Pages via **Settings → Pages → Source → "Deploy from a branch" → `main` → `/docs`**.
+No build, no Actions, no permissions. The static `docs/` folder is published as-is.
 
 ## Defects found & fixed during strict audit
 1. **Gate bug** — `urljoin` resolved `index.html/` as a directory on Windows, false-failing every link. Rewrote to `dirname`-based resolution.
@@ -45,12 +44,12 @@ rewritten `README.md` (Swiss header, features, quick-start, site link, badges).
 
 ## Known limitations (flagged, not blocking)
 - `og.svg` is SVG; some platforms ignore SVG OG images (PNG preferred for social cards).
-- CI strict gate = links + HTML + zero-external (reliable offline). Lighthouse 4×100 is engineered-for but left as a manual acceptance step (needs headless Chrome in CI).
+- Docs gate (`check_docs.py`) was removed to keep deployment dead-simple; the static `docs/` folder is served directly. Lighthouse 4×100 is engineered-for and left as a manual acceptance step.
 
 ## Acceptance checklist for tomorrow
-- [ ] Open `site/index.html` — Swiss layout, theme toggle inverts cleanly.
+- [ ] Open `docs/index.html` — Swiss layout, theme toggle inverts cleanly.
 - [ ] `skill.html` reads as a precise execution protocol.
 - [ ] `demo.html` — three example runs render; assembler copies a valid prompt.
 - [ ] `contributing.html` + root `CONTRIBUTING.md` consistent.
-- [ ] Enable GitHub Pages (source: `site/` from `deploy.yml`) and confirm live URL.
+- [ ] Enable GitHub Pages (Source: Deploy from a branch → `main` → `/docs`) and confirm live URL.
 - [ ] (Optional) Run Lighthouse locally for the 4×100 confirmation.
